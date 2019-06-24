@@ -45,61 +45,81 @@
         <div class="operate-wrapper">
           <el-button type="primary" size="small" @click="handleExport">{{$t('common.export')}}</el-button>
           <el-button type="primary" size="small" @click="showDialog('add')">{{$t('common.add')}}</el-button>
-          <el-button type="primary" size="small" @click="showDialog('update')">{{$t('common.update')}}</el-button>
+          <el-button
+            type="primary"
+            size="small"
+            @click="showDialog('update')"
+          >{{$t('common.update')}}</el-button>
           <el-button type="primary" size="small" @click="handleDelete">{{$t('common.delete')}}</el-button>
         </div>
       </div>
-      <el-table
-              :data="companies"
-              @selection-change="handleSelectionChange"
-              :height="400"
-      >
+      <el-table :data="companies" @selection-change="handleSelectionChange" :height="400">
         <el-table-column type="selection"></el-table-column>
-        <el-table-column prop="companyCode" :label="$t('upAndDownCompanyManage.companyCode')"
-                         align="center"></el-table-column>
-        <el-table-column prop="companyName" :label="$t('upAndDownCompanyManage.companyName')"
-                         align="center"></el-table-column>
-        <el-table-column prop="companyAbbr" :label="$t('upAndDownCompanyManage.companyAbbr')"
-                         align="center"></el-table-column>
-        <el-table-column prop="telphone" :label="$t('upAndDownCompanyManage.telphone')"
-                         align="center"></el-table-column>
-        <el-table-column prop="country" :label="$t('upAndDownCompanyManage.country')"
-                         align="center"></el-table-column>
+        <el-table-column
+          prop="companyCode"
+          :label="$t('upAndDownCompanyManage.companyCode')"
+          align="center"
+        ></el-table-column>
+        <el-table-column
+          prop="companyName"
+          :label="$t('upAndDownCompanyManage.companyName')"
+          align="center"
+        ></el-table-column>
+        <el-table-column
+          prop="companyAbbr"
+          :label="$t('upAndDownCompanyManage.companyAbbr')"
+          align="center"
+        ></el-table-column>
+        <el-table-column
+          prop="telphone"
+          :label="$t('upAndDownCompanyManage.telphone')"
+          align="center"
+        ></el-table-column>
+        <el-table-column
+          prop="country"
+          :label="$t('upAndDownCompanyManage.country')"
+          align="center"
+        ></el-table-column>
         <el-table-column :label="$t('upAndDownCompanyManage.language')" align="center">
           <template slot-scope="scope">{{ $t(`language.${scope.row.language}`) }}</template>
         </el-table-column>
       </el-table>
       <el-pagination
-              :page-sizes="[10, 20, 30, 40]"
-              :total="total"
-              :page-size="pagesize"
-              :current-page="currentpage"
-              @size-change="handlePageSizeChange"
-              @current-change="handleCurrentChange"
-              layout="total, sizes, prev, pager, next, jumper"
-              class="pagination">
-      </el-pagination>
+        :page-sizes="[10, 20, 30, 40]"
+        :total="total"
+        :page-size="pagesize"
+        :current-page="currentpage"
+        @size-change="handlePageSizeChange"
+        @current-change="handleCurrentChange"
+        layout="total, sizes, prev, pager, next, jumper"
+        class="pagination"
+      ></el-pagination>
     </el-card>
-    <el-dialog
-            :title="$t(`common.${dialogAction}`)"
-            :visible.sync="dialogVisible"
-            width="60%"
-    >
+    <el-dialog :title="$t(`common.${dialogAction}`)" :visible.sync="dialogVisible" width="60%">
       <div class="form-dialog">
         <el-form :model="form" :rules="formRules" ref="dialogForm" inline label-position="top">
           <el-row>
             <el-col :span="8">
-              <el-form-item prop="companyCode" :label="$t('upAndDownCompanyManage.companyCode') + '：'">
+              <el-form-item
+                prop="companyCode"
+                :label="$t('upAndDownCompanyManage.companyCode') + '：'"
+              >
                 <el-input v-model="form.companyCode"></el-input>
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item prop="companyName" :label="$t('upAndDownCompanyManage.companyName') + '：'">
+              <el-form-item
+                prop="companyName"
+                :label="$t('upAndDownCompanyManage.companyName') + '：'"
+              >
                 <el-input v-model="form.companyName"></el-input>
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item prop="companyAbbr" :label="$t('upAndDownCompanyManage.companyAbbr') + '：'">
+              <el-form-item
+                prop="companyAbbr"
+                :label="$t('upAndDownCompanyManage.companyAbbr') + '：'"
+              >
                 <el-input v-model="form.companyAbbr"></el-input>
               </el-form-item>
             </el-col>
@@ -128,12 +148,17 @@
               </el-form-item>
             </el-col>
             <el-col :span="16">
-              <el-form-item prop="secretKey" :label="$t('upAndDownCompanyManage.secretKey') + '：'" style="width:100%;">
+              <el-form-item
+                prop="secretKey"
+                :label="$t('upAndDownCompanyManage.secretKey') + '：'"
+                style="width:100%;"
+              >
                 <el-input v-model="form.secretKey" readonly style="width:90%">
                   <template slot="append">
-                    <el-button type="primary" @click="generateSecretKey">
-                      {{ $t('upAndDownCompanyManage.generateSecretKey') }}
-                    </el-button>
+                    <el-button
+                      type="primary"
+                      @click="generateSecretKey"
+                    >{{ $t('upAndDownCompanyManage.generateSecretKey') }}</el-button>
                   </template>
                 </el-input>
               </el-form-item>
@@ -240,20 +265,23 @@
         this.getCompanies();
       },
       getCompanies() {
-        this.$http.post('/company/get', {
-          query: this.query,
-          page_size: this.pagesize,
-          cur_page: this.currentpage
-        }).then(res => {
-          if (res.status === 200) {
-            this.companies = res.data.list;
-            this.total = res.data.total;
-          } else {
-            this.$message.error(res.message);
-          }
-        }).catch(err => {
-          console.log(err);
-        });
+        this.$http
+          .post('/company/get', {
+            query: this.query,
+            page_size: this.pagesize,
+            cur_page: this.currentpage
+          })
+          .then(res => {
+            if (res.status === 200) {
+              this.companies = res.data.list;
+              this.total = res.data.total;
+            } else {
+              this.$message.error(res.message);
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          });
       },
       showDialog(action) {
         this.dialogAction = action;
@@ -282,17 +310,20 @@
         this.selected.forEach(selected => {
           ids.push(selected._id);
         });
-        this.$http.delete('/company/delete', {
-          data: ids
-        }).then(res => {
-          if (res.status === 200) {
-            this.getCompanies();
-          } else {
-            this.$message.error(res.message);
-          }
-        }).catch(error => {
-          console.log(error);
-        });
+        this.$http
+          .delete('/company/delete', {
+            data: ids
+          })
+          .then(res => {
+            if (res.status === 200) {
+              this.getCompanies();
+            } else {
+              this.$message.error(res.message);
+            }
+          })
+          .catch(error => {
+            console.log(error);
+          });
       },
       handlerDialogOk(formName) {
         this.$refs[formName].validate(valid => {
@@ -309,46 +340,55 @@
         });
       },
       add() {
-        this.$http.post('/company/create', {
-          data: this.form
-        }).then(res => {
-          if (res.status === 200) {
-            this.dialogVisible = false;
-            this.currentpage = 1;
-            this.getCompanies();
-          } else {
-            this.$message.error(res.message);
-          }
-        }).catch(err => {
-          console.log(err);
-        });
+        this.$http
+          .post('/company/create', {
+            data: this.form
+          })
+          .then(res => {
+            if (res.status === 200) {
+              this.dialogVisible = false;
+              this.currentpage = 1;
+              this.getCompanies();
+            } else {
+              this.$message.error(res.message);
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          });
       },
       update() {
-        this.$http.post('/company/update', this.form).then(res => {
-          if (res.status === 200) {
-            this.dialogVisible = false;
-            this.getCompanies();
-          } else {
-            this.$message.error(res.message);
-          }
-        }).catch(error => console.log(error));
+        this.$http
+          .post('/company/update', this.form)
+          .then(res => {
+            if (res.status === 200) {
+              this.dialogVisible = false;
+              this.getCompanies();
+            } else {
+              this.$message.error(res.message);
+            }
+          })
+          .catch(error => console.log(error));
       },
       handleExport() {
-        this.$http.get('/company/export', {
-          responseType: 'blob',
-        }).then(data => {
-          let blob = new Blob([data], {tppe: 'utf-8'});
-          let url = window.URL.createObjectURL(blob);
-          let link = document.createElement('a');
-          link.style.display = 'none';
-          link.href = url;
-          link.setAttribute('download', 'company.xlsx');
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-        }).catch(err => {
-          console.log(err);
-        });
+        this.$http
+          .get('/company/export', {
+            responseType: 'blob'
+          })
+          .then(data => {
+            let blob = new Blob([data], { tppe: 'utf-8' });
+            let url = window.URL.createObjectURL(blob);
+            let link = document.createElement('a');
+            link.style.display = 'none';
+            link.href = url;
+            link.setAttribute('download', 'company.xlsx');
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+          })
+          .catch(err => {
+            console.log(err);
+          });
       },
       handleSelectionChange(selected) {
         this.selected = selected;
@@ -364,14 +404,14 @@
 </script>
 
 <style lang="scss" scoped>
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .pagination {
-    margin-top: 20px;
-    text-align: right;
-  }
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
 </style>

@@ -39,12 +39,12 @@ export default function generateMenu() {
         title: route.meta.title,
         icon: route.meta.icon,
         children: [
-          {path: '/port/Asia',title: 'Asia'},
-          {path: '/port/Europe',title: 'Europe'},
-          {path: '/port/Africa',title: 'Africa'},
-          {path: '/port/Oceania',title: 'Oceania'},
-          {path: '/port/NorthAmerica',title: 'NorthAmerica'},
-          {path: '/port/SouthAmerica',title: 'SouthAmerica'}
+          { path: '/port/Asia', title: 'Asia' },
+          { path: '/port/Europe', title: 'Europe' },
+          { path: '/port/Africa', title: 'Africa' },
+          { path: '/port/Oceania', title: 'Oceania' },
+          { path: '/port/NorthAmerica', title: 'NorthAmerica' },
+          { path: '/port/SouthAmerica', title: 'SouthAmerica' }
         ]
       };
     } else {
@@ -53,7 +53,7 @@ export default function generateMenu() {
         title: route.meta.title,
         icon: route.meta.icon
       };
-      
+
       if (route.children && route.children.length) {
         item.children = route.children.map(sub_route => {
           return {
@@ -65,4 +65,4 @@ export default function generateMenu() {
       return item;
     }
   });
-};
+}

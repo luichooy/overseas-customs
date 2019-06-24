@@ -2,7 +2,13 @@
   <div class="inexport-data-query">
     <el-card shadow="never">
       <span slot="header">{{$t('common.queryCondition')}}</span>
-      <el-form :model="form" inline label-position="right" label-width="120px" class="demo-form-inline">
+      <el-form
+        :model="form"
+        inline
+        label-position="right"
+        label-width="120px"
+        class="demo-form-inline"
+      >
         <el-row>
           <el-col :md="8" :lg="8" :xl="6">
             <el-form-item :label="$t('common.upCompany') + '：'">
@@ -16,8 +22,7 @@
                 type="datetime"
                 :editable="false"
                 class="input"
-              >
-              </el-date-picker>
+              ></el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :md="8" :lg="8" :xl="6">
@@ -27,16 +32,15 @@
                 type="datetime"
                 :editable="false"
                 class="input"
-              >
-              </el-date-picker>
+              ></el-date-picker>
             </el-form-item>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="6" :push="18">
             <el-form-item style="margin-bottom: 0;">
-              <el-button type="primary" @click="">{{$t('common.query')}}</el-button>
-              <el-button type="primary" @click="">{{$t('common.reset')}}</el-button>
+              <el-button type="primary">{{$t('common.query')}}</el-button>
+              <el-button type="primary">{{$t('common.reset')}}</el-button>
             </el-form-item>
           </el-col>
         </el-row>
@@ -62,8 +66,8 @@
         @size-change="handlePageSizeChange"
         @current-change="handleCurrentChange"
         layout="total, sizes, prev, pager, next, jumper"
-        class="pagination">
-      </el-pagination>
+        class="pagination"
+      ></el-pagination>
     </el-card>
   </div>
 </template>
@@ -83,7 +87,7 @@
         pagesize: 10,
         currentpage: 1,
         total: 400
-      }
+      };
     },
     methods: {
       handlePageSizeChange(size) {
@@ -99,18 +103,18 @@
 </script>
 
 <style lang="scss" scoped>
-  .input {
-    width: 200px;
-  }
-  
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .pagination {
-    margin-top: 20px;
-    text-align: right;
-  }
+.input {
+  width: 200px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
 </style>

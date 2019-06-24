@@ -2,7 +2,13 @@
   <div class="clearance-info-manage">
     <el-card shadow="never">
       <span slot="header">{{$t('common.queryCondition')}}</span>
-      <el-form :model="form" inline label-position="right" label-width="140px" class="demo-form-inline">
+      <el-form
+        :model="form"
+        inline
+        label-position="right"
+        label-width="140px"
+        class="demo-form-inline"
+      >
         <el-row>
           <el-col :md="8" :lg="8" :xl="6">
             <el-form-item :label="$t('clearanceInfoManage.clientId') + '：'">
@@ -36,31 +42,29 @@
           <el-col :md="8" :lg="8" :xl="6">
             <el-form-item :label="$t('common.startTime') + '：'">
               <el-date-picker
-                      v-model="form.startTime"
-                      type="datetime"
-                      :editable="false"
-                      class="input"
-              >
-              </el-date-picker>
+                v-model="form.startTime"
+                type="datetime"
+                :editable="false"
+                class="input"
+              ></el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :md="8" :lg="8" :xl="6">
             <el-form-item :label="$t('common.endTime') + '：'">
               <el-date-picker
-                      v-model="form.endTime"
-                      type="datetime"
-                      :editable="false"
-                      class="input"
-              >
-              </el-date-picker>
+                v-model="form.endTime"
+                type="datetime"
+                :editable="false"
+                class="input"
+              ></el-date-picker>
             </el-form-item>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="6" :push="18">
             <el-form-item style="margin-bottom: 0;">
-              <el-button type="primary" @click="">{{$t('common.query')}}</el-button>
-              <el-button type="primary" @click="">{{$t('common.reset')}}</el-button>
+              <el-button type="primary">{{$t('common.query')}}</el-button>
+              <el-button type="primary">{{$t('common.reset')}}</el-button>
             </el-form-item>
           </el-col>
         </el-row>
@@ -91,13 +95,13 @@
         <el-table-column :label="$t('common.operation')" align="center"></el-table-column>
       </el-table>
       <el-pagination
-              :page-sizes="[10, 20, 30, 40]"
-              :total="total"
-              @size-change="handlePageSizeChange"
-              @current-change="handleCurrentChange"
-              layout="total, sizes, prev, pager, next, jumper"
-              class="pagination">
-      </el-pagination>
+        :page-sizes="[10, 20, 30, 40]"
+        :total="total"
+        @size-change="handlePageSizeChange"
+        @current-change="handleCurrentChange"
+        layout="total, sizes, prev, pager, next, jumper"
+        class="pagination"
+      ></el-pagination>
     </el-card>
   </div>
 </template>
@@ -133,18 +137,18 @@
 </script>
 
 <style lang="scss" scoped>
-  .input {
-    width: 200px;
-  }
+.input {
+  width: 200px;
+}
 
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .pagination {
-    margin-top: 20px;
-    text-align: right;
-  }
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
 </style>

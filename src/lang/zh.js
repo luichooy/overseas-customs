@@ -43,7 +43,7 @@ export default {
   title: proxyTitle(target, title),
   sidebar: {
     home: '首页',
-    
+
     nationalPortList: '国家口岸列表',
     Asia: '亚洲',
     NorthAmerica: '北美洲',
@@ -51,24 +51,24 @@ export default {
     Oceania: '大洋洲',
     Europe: '欧洲',
     Africa: '非洲',
-    
+
     basic: '基本设置',
-    upAndDownCompanyManage: '上下游公司管理',
+    upAndDownCompanyManage: '公司管理',
     nationalPortSetting: '国家口岸设置',
-    
+
     log: '日志管理',
     loginLog: '登陆日志管理',
-    
-    delare: '申报管理',
+
+    delare: 'SB管理',
     pudongClearance: '浦东清关',
     clearanceInfoManage: '清关运单信息管理',
     inExportDataQuery: '进/出港件数据查询',
     inExportBillManage: '进/出港件运单管理',
     preClearancePrint: '预清关信息打印',
-    
+
     credentials: '证件管理',
     idCardManage: '身份证管理',
-    
+
     track: '轨迹查询'
   },
   topbar: {
@@ -97,7 +97,8 @@ export default {
   login: {},
   port: {
     country: '国家',
-    noPortsText: '欢迎您来到地区国家城市口岸展示页,该页展示各个城市口岸关务能力查询'
+    noPortsText:
+      '欢迎您来到地区国家城市口岸展示页,该页展示各个城市口岸关务能力查询'
   },
   upAndDownCompanyManage: {
     upAndDownCompanyManage: '上下游公司管理',

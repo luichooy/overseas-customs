@@ -2,7 +2,7 @@
   <div class="country-picker" :style="{width: realWidth}">
     <el-popover placement="bottom-start" :visible-arrow="false" popper-class="popover-picker">
       <el-input slot="reference"></el-input>
-      
+
       <div class="picker-panel">
         <ul class="picker-tabs" @click="toggleTab">
           <li class="tab active">热门国家</li>
@@ -24,14 +24,12 @@
         </ul>
       </div>
     </el-popover>
-  
-  
   </div>
 </template>
 
 <script>
   export default {
-    name: "CountryPicker",
+    name: 'CountryPicker',
     props: {
       width: {
         type: [String, Number],
@@ -53,32 +51,31 @@
         target.classList.add('active');
       }
     }
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
-  .country-picker {
-  
-  }
-  
-  .popover-picker {
-    .picker-panel {
-      font-size: 12px;
-      
-      .picker-tabs {
-        display: flex;
-        justify-content: space-between;
-        
-        .tab {
-          padding: 5px;
-          cursor: pointer;
-          border-bottom: 1px solid #DDDDDD;
-          
-          &.active {
-            border-bottom-color: #409EFF;
-          }
+.country-picker {
+}
+
+.popover-picker {
+  .picker-panel {
+    font-size: 12px;
+
+    .picker-tabs {
+      display: flex;
+      justify-content: space-between;
+
+      .tab {
+        padding: 5px;
+        cursor: pointer;
+        border-bottom: 1px solid #dddddd;
+
+        &.active {
+          border-bottom-color: #409eff;
         }
       }
     }
   }
+}
 </style>
