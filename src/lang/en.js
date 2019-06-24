@@ -29,7 +29,7 @@ export default {
     upCompany: 'upCompany',
     startTime: 'Start Time',
     endTime: 'End Time',
-    transitNumber: 'YTO transit number'
+    transitNumber: 'order number'
   },
   language: {
     'zh-cn': 'Chinese (Simplified)',
@@ -42,7 +42,7 @@ export default {
   title: proxyTitle(target, title),
   sidebar: {
     home: 'Home Page',
-    
+
     nationalPortList: 'National Port List',
     Asia: 'Asia',
     NorthAmerica: 'North America',
@@ -50,24 +50,24 @@ export default {
     Oceania: 'Oceania',
     Europe: 'Europe',
     Africa: 'Africa',
-    
+
     basic: 'Basic Setting',
     upAndDownCompanyManage: 'UpAndDownCompanyManage',
     nationalPortSetting: 'National Port Setting',
-    
+
     log: 'Log',
     loginLog: 'Login',
-    
+
     delare: 'Delare Manage',
     pudongClearance: 'Pudong Clearance',
     clearanceInfoManage: 'ClearanceInfoManage',
     inExportDataQuery: 'InExportDataQuery',
     inExportBillManage: 'InExportBillManage',
     preClearancePrint: 'PreClearancePrint',
-    
+
     credentials: 'Credentials Manage',
     idCardManage: 'IdCard Manage',
-    
+
     track: 'Track Query'
   },
   topbar: {
@@ -96,7 +96,8 @@ export default {
   login: {},
   port: {
     country: 'Country',
-    noPortsText: 'Welcome to the regional national city port display page, which shows the city port customs abilit'
+    noPortsText:
+      'Welcome to the regional national city port display page, which shows the city port customs abilit'
   },
   upAndDownCompanyManage: {
     upAndDownCompanyManage: 'upAndDownCompanyManage',
@@ -159,7 +160,8 @@ export default {
     expressNum: 'expressNum'
   },
   walkProcess: {
-    placeholder: 'Enter up to 10 waybill Numbers,separated by "," or "line break"',
+    placeholder:
+      'Enter up to 10 waybill Numbers,separated by "," or "line break"',
     serialNum: 'Serial number',
     waybillNum: 'Waybill number',
     latestTrack: 'The latest track'

@@ -27,10 +27,10 @@ export default {
     operation: '操作',
     queryCondition: '查询条件',
     date: '日期',
-    upCompany: '上游公司',
+    upCompany: '公司',
     startTime: '开始时间',
     endTime: '结束时间',
-    transitNumber: '圆通运单号'
+    transitNumber: '订单号'
   },
   language: {
     'zh-cn': '中文（简体）',
@@ -54,17 +54,17 @@ export default {
 
     basic: '基本设置',
     upAndDownCompanyManage: '公司管理',
-    nationalPortSetting: '国家口岸设置',
+    nationalPortSetting: '城市设置',
 
     log: '日志管理',
     loginLog: '登陆日志管理',
 
     delare: 'SB管理',
-    pudongClearance: '浦东清关',
-    clearanceInfoManage: '清关运单信息管理',
-    inExportDataQuery: '进/出港件数据查询',
-    inExportBillManage: '进/出港件运单管理',
-    preClearancePrint: '预清关信息打印',
+    pudongClearance: 'pdqg',
+    clearanceInfoManage: '信息管理',
+    inExportDataQuery: '数据查询',
+    inExportBillManage: '订单管理',
+    preClearancePrint: '信息打印',
 
     credentials: '证件管理',
     idCardManage: '身份证管理',
@@ -97,11 +97,10 @@ export default {
   login: {},
   port: {
     country: '国家',
-    noPortsText:
-      '欢迎您来到地区国家城市口岸展示页,该页展示各个城市口岸关务能力查询'
+    noPortsText: '欢迎您来到地区国家城市展示页,该页展示各个城市能力查询'
   },
   upAndDownCompanyManage: {
-    upAndDownCompanyManage: '上下游公司管理',
+    upAndDownCompanyManage: '公司管理',
     companyCode: '公司编号',
     companyName: '公司名称',
     companyAbbr: '公司简称',
@@ -113,13 +112,13 @@ export default {
     generateSecretKey: '生成密钥'
   },
   nationalPortSetting: {
-    nationalPortList: '国家口岸列表',
+    nationalPortList: '列表',
     index: '序号',
     area: '地区',
     country: '国家',
     city: '城市',
     port: '口岸',
-    customsCapacity: '关务能力',
+    customsCapacity: '能力',
     Asia: '亚洲',
     Europe: '欧洲',
     Africa: '非洲',
@@ -148,35 +147,35 @@ export default {
     checker: '审核人',
     batchExport: '批量导出',
     selectExport: '勾选导出',
-    hExport: '横排导出',
-    vExport: '竖排导出'
+    hExport: 'x-export',
+    vExport: 'y-export'
   },
   inExportBillManage: {
-    customId: '客户订单号',
-    InExportBillManageList: '进/出港件运单管理列表'
+    customId: '订单号',
+    InExportBillManageList: '列表'
   },
   inExportDataQuery: {
-    inExportDataQuery: '进出港数据查询',
-    downCompany: '下游公司',
+    inExportDataQuery: '数据查询',
+    downCompany: '公司',
     expressNum: '快件件数'
   },
   walkProcess: {
-    placeholder: '最多输入10个运单号，使用“，”或者“换行符”分割',
+    placeholder: '最多输入10个订单号，使用“，”或者“换行符”分割',
     serialNum: '序号',
-    waybillNum: '运单号',
-    latestTrack: '最新轨迹'
+    waybillNum: '订单号',
+    latestTrack: '轨迹'
   },
   clearanceInfoManage: {
-    clearanceInfoManage: '清关运单信息管理',
-    clientId: '上游公司编号',
-    customsId: '清关公司编号',
-    totalLogisticsNo: '总运单号',
-    subLogisticsNo: '分运单号',
-    logisticsCode: '物流企业代码',
+    clearanceInfoManage: '订单管理',
+    clientId: '公司编号',
+    customsId: '公司编号',
+    totalLogisticsNo: '订单号',
+    subLogisticsNo: '运单号',
+    logisticsCode: '物流企业编号',
     logisticsName: '物流企业名称',
-    totalLogist: '总运单号',
+    totalLogist: '购物车编号',
     orderId: '订单编号',
-    platformCode: '电商平台代码',
+    platformCode: '电商平台编码',
     shipping: '发货人名称',
     shippingAddress: '发货人地址',
     consigneeName: '收货人名称',
