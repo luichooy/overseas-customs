@@ -14,7 +14,7 @@
     "element-ui": "^2.4.5",
     "excel-export": "^0.5.1",
     "express": "^4.16.4",
-    "mongoose": "^5.3.4",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.18.4",
     "normalize.css": "^8.0.0",
     "screenfull": "^3.3.2",
