@@ -13,7 +13,7 @@
     "body-parse": "^0.1.0",
     "element-ui": "^2.4.5",
     "excel-export": "^0.5.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mongoose": "^5.3.4",
     "nodemon": "^1.18.4",
     "normalize.css": "^8.0.0",
